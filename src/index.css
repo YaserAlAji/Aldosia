@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0A0A0A;
+  --color-paper: #FFFFFF;
+  --color-sky: #A8CBF0;
+  --color-sky-dark: #1F4E85;
+  --color-muted: #7FB0E3;
+  --color-border: rgba(255,255,255,0.1);
+  --color-glass: rgba(255,255,255,0.05);
+  
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Plus Jakarta Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
