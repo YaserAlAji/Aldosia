@@ -71,14 +71,15 @@
             left: 50%;
             margin-left: -100px;
             opacity: 0;
-            transition: opacity 0.3s;
+            transition: opacity 0.3s, visibility 0.3s;
             border: 1px solid rgba(168, 203, 240, 0.3);
             font-size: 11px;
             line-height: 1.4;
             backdrop-filter: blur(10px);
             pointer-events: none;
         }
-        .tooltip-container:hover .tooltip-content {
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-trigger:focus + .tooltip-content {
             visibility: visible;
             opacity: 1;
         }
@@ -91,6 +92,17 @@
             border-width: 5px;
             border-style: solid;
             border-color: rgba(168, 203, 240, 0.3) transparent transparent transparent;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
         }
         html { scroll-behavior: smooth; }
     </style>
@@ -112,8 +124,9 @@
 </div>
 <div class="hidden md:flex gap-8 items-center font-display font-semibold text-sm tracking-tight">
 <a class="text-paper hover:text-sky transition-colors" href="#services">Services</a>
-<a class="text-white/60 hover:text-sky transition-colors" href="#niches">Niches</a>
 <a class="text-white/60 hover:text-sky transition-colors" href="#process">Process</a>
+<a class="text-white/60 hover:text-sky transition-colors" href="#niches">Niches</a>
+<a class="text-white/60 hover:text-sky transition-colors" href="#pricing">Pricing</a>
 <a class="text-white/60 hover:text-sky transition-colors" href="#success">Success</a>
 </div>
 <!-- FIX 1: BUTTONS -->
@@ -158,27 +171,27 @@
 <img alt="System Dashboard" class="relative rounded-2xl border border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpxa7pdYx4vACic68bCnL7o-YXZrOqCWBRVFQY8ZFgb1w3pe-Votw0uM82AQzOi0mQQcVzNwWp0kRROyB-XIREOFoVoyWwfS1rKXEXzynIDIcBqST__-ajuMX-V8QdyyGmgjnd-_rmM90XaUKMeL0SiBwabMDHItWcWLeb9OgSlEt_IBw_dwpuZsTvBc7v9RrZz548Q4aNbrCisLATf-IV_EVnXSpKTw75gP5jpLzR5mMSYIFoqv-y-NKFAwIsDf5CdiM0ZBMzoOA"/>
 </div>
 <div class="space-y-8">
-<span class="font-mono text-xs text-sky uppercase tracking-widest">Entry-Level Point</span>
-<h2 class="font-display font-800 text-4xl md:text-5xl tracking-tight">Get Started for Free!</h2>
+<span class="font-mono text-xs text-sky uppercase tracking-widest">Zero Risk. Zero Fluff.</span>
+<h2 class="font-display font-800 text-4xl md:text-5xl tracking-tight">Get Results First. Pay After.</h2>
 <div class="space-y-6">
 <div class="flex items-start gap-4">
 <span class="material-symbols-outlined text-sky text-2xl">sync_alt</span>
 <div>
 <h4 class="font-display font-700 text-lg">One-Click Integration</h4>
-<p class="font-sans font-300 text-white/60">Connect your entire marketing and sales stack in minutes.</p>
+<p class="font-sans font-300 text-white/60">Plug in your CRM, GMB, and socials in one click — no tech headaches.</p>
 </div>
 </div>
 <div class="flex items-start gap-4">
 <span class="material-symbols-outlined text-sky text-2xl">bolt</span>
 <div>
 <h4 class="font-display font-700 text-lg">Real-Time Optimization</h4>
-<p class="font-sans font-300 text-white/60">AI-driven adjustments based on live performance data.</p>
+<p class="font-sans font-300 text-white/60">Our system spots dead leads and re-engages them automatically — while you sleep.</p>
 </div>
 </div>
 </div>
 <!-- FIX 1: BUTTONS -->
 <a href="https://link.aldosia.com/widget/booking/SSHkKLoglu4Uoqm9vjll" class="inline-block px-8 py-4 bg-sky text-ink font-display font-700 rounded-full hover:brightness-110 transition-all active:scale-95 text-center">
-                        Claim Your Trial
+                        Book Your Strategy Call
                     </a>
 </div>
 </div>
@@ -193,13 +206,13 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 <!-- FIX 2: SERVICES SECTION -->
 <!-- Card 1: Smart Websites -->
-<div class="glass-card p-10 rounded-2xl hover:border-sky/40 transition-all group">
+<div class="glass-card p-10 rounded-2xl hover:border-sky/60 hover:scale-[1.02] hover:shadow-2xl hover:shadow-sky/5 transition-all duration-300 group">
 <span class="material-symbols-outlined text-sky text-4xl mb-6 block">language</span>
 <div class="flex items-center justify-between mb-3">
     <h3 class="font-display font-700 text-xl">Smart Websites</h3>
     <div class="tooltip-container">
-        <span class="material-symbols-outlined text-sky/40 hover:text-sky transition-colors cursor-help text-lg">info</span>
-        <div class="tooltip-content">
+        <span class="tooltip-trigger material-symbols-outlined text-sky/40 hover:text-sky transition-colors cursor-help text-lg outline-none focus:text-sky" tabindex="0" aria-describedby="tooltip-websites" role="button" aria-label="More information about Smart Websites">info</span>
+        <div id="tooltip-websites" class="tooltip-content" role="tooltip">
             <ul class="list-disc pl-3 space-y-1">
                 <li>High-speed landing pages</li>
                 <li>Mobile-first architecture</li>
@@ -212,13 +225,13 @@
 <p class="font-sans font-300 text-white/60 leading-relaxed">Professional, SEO-optimized websites built to convert visitors into leads, not just look good.</p>
 </div>
 <!-- Card 2: CRM & Pipelines -->
-<div class="glass-card p-10 rounded-2xl hover:border-sky/40 transition-all group">
+<div class="glass-card p-10 rounded-2xl hover:border-sky/60 hover:scale-[1.02] hover:shadow-2xl hover:shadow-sky/5 transition-all duration-300 group">
 <span class="material-symbols-outlined text-sky text-4xl mb-6 block">hub</span>
 <div class="flex items-center justify-between mb-3">
     <h3 class="font-display font-700 text-xl">CRM &amp; Pipelines</h3>
     <div class="tooltip-container">
-        <span class="material-symbols-outlined text-sky/40 hover:text-sky transition-colors cursor-help text-lg">info</span>
-        <div class="tooltip-content">
+        <span class="tooltip-trigger material-symbols-outlined text-sky/40 hover:text-sky transition-colors cursor-help text-lg outline-none focus:text-sky" tabindex="0" aria-describedby="tooltip-crm" role="button" aria-label="More information about CRM & Pipelines">info</span>
+        <div id="tooltip-crm" class="tooltip-content" role="tooltip">
             <ul class="list-disc pl-3 space-y-1">
                 <li>Custom stages</li>
                 <li>Lead source tracking</li>
@@ -231,13 +244,13 @@
 <p class="font-sans font-300 text-white/60 leading-relaxed">Complete lead tracking, pipeline stages, and automated follow-up so no lead ever falls through.</p>
 </div>
 <!-- Card 3: AI Automation -->
-<div class="glass-card p-10 rounded-2xl hover:border-sky/40 transition-all group">
+<div class="glass-card p-10 rounded-2xl hover:border-sky/60 hover:scale-[1.02] hover:shadow-2xl hover:shadow-sky/5 transition-all duration-300 group">
 <span class="material-symbols-outlined text-sky text-4xl mb-6 block">psychology</span>
 <div class="flex items-center justify-between mb-3">
     <h3 class="font-display font-700 text-xl">AI Automation</h3>
     <div class="tooltip-container">
-        <span class="material-symbols-outlined text-sky/40 hover:text-sky transition-colors cursor-help text-lg">info</span>
-        <div class="tooltip-content">
+        <span class="tooltip-trigger material-symbols-outlined text-sky/40 hover:text-sky transition-colors cursor-help text-lg outline-none focus:text-sky" tabindex="0" aria-describedby="tooltip-automation" role="button" aria-label="More information about AI Automation">info</span>
+        <div id="tooltip-automation" class="tooltip-content" role="tooltip">
             <ul class="list-disc pl-3 space-y-1">
                 <li>24/7 Chatbots</li>
                 <li>Voice call agents</li>
@@ -250,13 +263,13 @@
 <p class="font-sans font-300 text-white/60 leading-relaxed">24/7 AI chatbots and voice agents that qualify leads, answer FAQs, and book appointments automatically.</p>
 </div>
 <!-- Card 4: Sales Funnels -->
-<div class="glass-card p-10 rounded-2xl hover:border-sky/40 transition-all group">
+<div class="glass-card p-10 rounded-2xl hover:border-sky/60 hover:scale-[1.02] hover:shadow-2xl hover:shadow-sky/5 transition-all duration-300 group">
 <span class="material-symbols-outlined text-sky text-4xl mb-6 block">filter_alt</span>
 <div class="flex items-center justify-between mb-3">
     <h3 class="font-display font-700 text-xl">Sales Funnels</h3>
     <div class="tooltip-container">
-        <span class="material-symbols-outlined text-sky/40 hover:text-sky transition-colors cursor-help text-lg">info</span>
-        <div class="tooltip-content">
+        <span class="tooltip-trigger material-symbols-outlined text-sky/40 hover:text-sky transition-colors cursor-help text-lg outline-none focus:text-sky" tabindex="0" aria-describedby="tooltip-funnels" role="button" aria-label="More information about Sales Funnels">info</span>
+        <div id="tooltip-funnels" class="tooltip-content" role="tooltip">
             <ul class="list-disc pl-3 space-y-1">
                 <li>Multi-step funnels</li>
                 <li>Upsell/Downsell ops</li>
@@ -269,13 +282,13 @@
 <p class="font-sans font-300 text-white/60 leading-relaxed">High-converting landing pages and automated sequences that turn cold traffic into paying clients.</p>
 </div>
 <!-- Card 5: Reputation & Reviews -->
-<div class="glass-card p-10 rounded-2xl hover:border-sky/40 transition-all group">
+<div class="glass-card p-10 rounded-2xl hover:border-sky/60 hover:scale-[1.02] hover:shadow-2xl hover:shadow-sky/5 transition-all duration-300 group">
 <span class="material-symbols-outlined text-sky text-4xl mb-6 block">star</span>
 <div class="flex items-center justify-between mb-3">
     <h3 class="font-display font-700 text-xl">Reputation &amp; Reviews</h3>
     <div class="tooltip-container">
-        <span class="material-symbols-outlined text-sky/40 hover:text-sky transition-colors cursor-help text-lg">info</span>
-        <div class="tooltip-content">
+        <span class="tooltip-trigger material-symbols-outlined text-sky/40 hover:text-sky transition-colors cursor-help text-lg outline-none focus:text-sky" tabindex="0" aria-describedby="tooltip-reputation" role="button" aria-label="More information about Reputation & Reviews">info</span>
+        <div id="tooltip-reputation" class="tooltip-content" role="tooltip">
             <ul class="list-disc pl-3 space-y-1">
                 <li>Google review requests</li>
                 <li>Direct SMS surveys</li>
@@ -288,13 +301,13 @@
 <p class="font-sans font-300 text-white/60 leading-relaxed">Automated Google review campaigns that build trust and boost your local search ranking.</p>
 </div>
 <!-- Card 6: Unified Inbox -->
-<div class="glass-card p-10 rounded-2xl hover:border-sky/40 transition-all group">
+<div class="glass-card p-10 rounded-2xl hover:border-sky/60 hover:scale-[1.02] hover:shadow-2xl hover:shadow-sky/5 transition-all duration-300 group">
 <span class="material-symbols-outlined text-sky text-4xl mb-6 block">all_inbox</span>
 <div class="flex items-center justify-between mb-3">
     <h3 class="font-display font-700 text-xl">Unified Inbox</h3>
     <div class="tooltip-container">
-        <span class="material-symbols-outlined text-sky/40 hover:text-sky transition-colors cursor-help text-lg">info</span>
-        <div class="tooltip-content">
+        <span class="tooltip-trigger material-symbols-outlined text-sky/40 hover:text-sky transition-colors cursor-help text-lg outline-none focus:text-sky" tabindex="0" aria-describedby="tooltip-inbox" role="button" aria-label="More information about Unified Inbox">info</span>
+        <div id="tooltip-inbox" class="tooltip-content" role="tooltip">
             <ul class="list-disc pl-3 space-y-1">
                 <li>Omnichannel messaging</li>
                 <li>Team collaboration</li>
@@ -416,7 +429,7 @@
     </div>
 </section>
 <!-- Pricing Section -->
-<section class="py-32 px-6 bg-ink border-t border-white/5">
+<section class="py-32 px-6 bg-ink border-t border-white/5" id="pricing">
 <div class="max-w-7xl mx-auto">
 <div class="text-center mb-20">
 <h2 class="font-display font-800 text-4xl md:text-5xl tracking-tight">Three Tiers, One Growth System.</h2>
@@ -602,8 +615,9 @@
 <div class="flex flex-col gap-4">
 <h5 class="text-white">Platform</h5>
 <a class="text-white/40 hover:text-sky transition-colors" href="#services">Services</a>
-<a class="text-white/40 hover:text-sky transition-colors" href="#niches">Niches</a>
 <a class="text-white/40 hover:text-sky transition-colors" href="#process">Process</a>
+<a class="text-white/40 hover:text-sky transition-colors" href="#niches">Niches</a>
+<a class="text-white/40 hover:text-sky transition-colors" href="#pricing">Pricing</a>
 <a class="text-white/40 hover:text-sky transition-colors" href="#success">Success</a>
 </div>
 <div class="flex flex-col gap-4">
