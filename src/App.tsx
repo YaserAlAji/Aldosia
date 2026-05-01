@@ -80,8 +80,8 @@ export default function App() {
             <div className="relative group">
               <div className="absolute -inset-1 bg-sky/20 rounded-2xl blur-xl group-hover:bg-sky/30 transition-all"></div>
               <img 
-                alt="Aldosia System Dashboard" 
-                src="https://raw.githubusercontent.com/YaserAlAji/Aldosia/main/public/Second%20Hero%20Image.png"
+                alt="Aldosia Comprehensive Growth Dashboard showing active campaigns, leads captured, and ROI metrics" 
+                src="/dashboard.png"
                 loading="lazy"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1551288049-bbbda536ad89?q=80&w=2070&auto=format&fit=crop";
@@ -252,27 +252,27 @@ export default function App() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
                     <div className="hidden md:block absolute top-[40px] left-[15%] right-[15%] h-[1px] bg-gradient-to-r from-transparent via-sky/20 to-transparent z-0"></div>
 
-                    <div className="reveal relative z-10 flex flex-col items-center text-center group">
-                        <div className="w-20 h-20 glass-card rounded-2xl flex items-center justify-center mb-8 border-sky/20 group-hover:bg-sky/10 transition-all duration-500 hover:scale-110">
+                    <div className="reveal relative z-10 flex flex-col items-center text-center group p-8 rounded-3xl transition-all duration-500 hover:bg-sky/5 hover:-translate-y-2 border border-transparent hover:border-sky/20">
+                        <div className="w-20 h-20 glass-card rounded-2xl flex items-center justify-center mb-8 border-sky/20 group-hover:bg-sky/10 transition-all duration-500 group-hover:scale-110">
                             <span className="font-display font-800 text-2xl text-sky lowercase">01</span>
                         </div>
-                        <h3 className="font-display font-700 text-xl mb-4 tracking-tight uppercase">Strategy Call <span className="text-sky/60 text-sm font-mono lowercase tracking-widest block mt-1">(Day 1)</span></h3>
+                        <h3 className="font-display font-700 text-xl mb-4 tracking-tight uppercase group-hover:text-sky transition-colors">Strategy Call <span className="text-sky/60 text-sm font-mono lowercase tracking-widest block mt-1">(Day 1)</span></h3>
                         <p className="font-sans font-300 text-white/60 leading-relaxed max-w-[280px]">We audit your current setup, identify gaps, and map out your full growth system in a free 20-min call.</p>
                     </div>
 
-                    <div className="reveal relative z-10 flex flex-col items-center text-center group">
-                        <div className="w-20 h-20 glass-card rounded-2xl flex items-center justify-center mb-8 border-sky/20 group-hover:bg-sky/10 transition-all duration-500 hover:scale-110">
+                    <div className="reveal relative z-10 flex flex-col items-center text-center group p-8 rounded-3xl transition-all duration-500 hover:bg-sky/5 hover:-translate-y-2 border border-transparent hover:border-sky/20">
+                        <div className="w-20 h-20 glass-card rounded-2xl flex items-center justify-center mb-8 border-sky/20 group-hover:bg-sky/10 transition-all duration-500 group-hover:scale-110">
                             <span className="font-display font-800 text-2xl text-sky lowercase">02</span>
                         </div>
-                        <h3 className="font-display font-700 text-xl mb-4 tracking-tight uppercase">We Build It <span className="text-sky/60 text-sm font-mono lowercase tracking-widest block mt-1">(Days 2–7)</span></h3>
+                        <h3 className="font-display font-700 text-xl mb-4 tracking-tight uppercase group-hover:text-sky transition-colors">We Build It <span className="text-sky/60 text-sm font-mono lowercase tracking-widest block mt-1">(Days 2–7)</span></h3>
                         <p className="font-sans font-300 text-white/60 leading-relaxed max-w-[280px]">Your website, CRM, automations, and inbox are built and configured. You don't touch anything.</p>
                     </div>
 
-                    <div className="reveal relative z-10 flex flex-col items-center text-center group">
+                    <div className="reveal relative z-10 flex flex-col items-center text-center group p-8 rounded-3xl transition-all duration-500 hover:bg-sky/5 hover:-translate-y-2 border border-transparent hover:border-sky/20">
                         <div className="w-20 h-20 bg-sky rounded-2xl flex items-center justify-center mb-8 shadow-[0_0_30px_rgba(168,203,240,0.3)] group-hover:scale-110 transition-all duration-500">
                             <span className="font-display font-800 text-2xl text-ink lowercase">03</span>
                         </div>
-                        <h3 className="font-display font-700 text-xl mb-4 tracking-tight uppercase">You Grow <span className="text-sky/60 text-sm font-mono lowercase tracking-widest block mt-1">(Day 8+)</span></h3>
+                        <h3 className="font-display font-700 text-xl mb-4 tracking-tight uppercase group-hover:text-sky transition-colors">You Grow <span className="text-sky/100 text-sm font-mono lowercase tracking-widest block mt-1">(Day 8+)</span></h3>
                         <p className="font-sans font-300 text-white/60 leading-relaxed max-w-[280px]">Your system goes live. Leads come in, follow-ups go out automatically, appointments get booked while you sleep.</p>
                     </div>
                 </div>
