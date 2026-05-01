@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AldosiaLogo = () => (
-  <a href="/" style={{
+  <a href="/home" style={{
     textDecoration: 'none',
     display: 'flex',
     alignItems: 'center',

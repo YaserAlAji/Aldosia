@@ -60,7 +60,7 @@ export default function App() {
               Expert strategy meet transformative automation. We build the digital infrastructure that scales your vision while you focus on what matters most.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-16">
-              <a href="https://link.aldosia.com/widget/booking/SSHkKLoglu4Uoqm9vjll" className="px-8 py-4 bg-sky text-ink font-display font-700 rounded-full hover:brightness-110 transition-all active:scale-95 text-center">
+              <a href="https://link.aldosia.com/widget/booking/SSynS2Sc8s71Eyhovn4D" className="px-8 py-4 bg-sky text-ink font-display font-700 rounded-full hover:brightness-110 transition-all active:scale-95 text-center">
                 Book a Strategy Call
               </a>
               <a href="#niches" className="px-8 py-4 glass-card text-white font-display font-700 rounded-full hover:bg-white/10 transition-all active:scale-95 text-center">
@@ -109,7 +109,7 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <a href="https://link.aldosia.com/widget/booking/SSHkKLoglu4Uoqm9vjll" className="inline-block px-8 py-4 bg-sky text-ink font-display font-700 rounded-full hover:brightness-110 transition-all active:scale-95 text-center">
+              <a href="https://link.aldosia.com/widget/booking/SSynS2Sc8s71Eyhovn4D" className="inline-block px-8 py-4 bg-sky text-ink font-display font-700 rounded-full hover:brightness-110 transition-all active:scale-95 text-center">
                 Book Your Strategy Call
               </a>
             </div>
@@ -364,7 +364,7 @@ export default function App() {
                   <li className="flex items-center gap-3"><span className="material-symbols-outlined text-sky text-lg">check</span>Basic SEO setup</li>
                 </ul>
                 <p className="font-mono text-[10px] text-white/40 uppercase mb-4">Best for: New businesses, quick launch</p>
-                <a href="https://link.aldosia.com/widget/booking/SSHkKLoglu4Uoqm9vjll" className="w-full py-4 text-center rounded-xl border border-white/10 hover:bg-white/5 transition-all font-display font-700">Choose Starter</a>
+                <a href="https://link.aldosia.com/widget/booking/SSynS2Sc8s71Eyhovn4D" className="w-full py-4 text-center rounded-xl border border-white/10 hover:bg-white/5 transition-all font-display font-700">Choose Starter</a>
               </div>
 
               <div className="glass-card p-10 rounded-3xl flex flex-col relative border-sky/30 shadow-[0_0_40px_rgba(168,203,240,0.1)]">
@@ -387,7 +387,7 @@ export default function App() {
                   <li className="flex items-center gap-3"><span className="material-symbols-outlined text-sky text-lg">check</span>Reporting dashboard + mobile app</li>
                 </ul>
                 <p className="font-mono text-[10px] text-white/40 uppercase mb-4">Best for: Growing businesses, more leads</p>
-                <a href="https://link.aldosia.com/widget/booking/SSHkKLoglu4Uoqm9vjll" className="w-full py-4 text-center rounded-xl bg-sky text-ink font-display font-700 hover:brightness-110 transition-all">Choose Growth</a>
+                <a href="https://link.aldosia.com/widget/booking/SSynS2Sc8s71Eyhovn4D" className="w-full py-4 text-center rounded-xl bg-sky text-ink font-display font-700 hover:brightness-110 transition-all">Choose Growth</a>
               </div>
 
               <div className="glass-card p-10 rounded-3xl flex flex-col">
@@ -409,7 +409,7 @@ export default function App() {
                   <li className="flex items-center gap-3"><span className="material-symbols-outlined text-sky text-lg">check</span>Priority support · 1 month</li>
                 </ul>
                 <p className="font-mono text-[10px] text-white/40 uppercase mb-4">Best for: Scaling teams, maximum growth</p>
-                <a href="https://link.aldosia.com/widget/booking/SSHkKLoglu4Uoqm9vjll" className="w-full py-4 text-center rounded-xl border border-white/10 hover:bg-white/5 transition-all font-display font-700">Choose Premium</a>
+                <a href="https://link.aldosia.com/widget/booking/SSynS2Sc8s71Eyhovn4D" className="w-full py-4 text-center rounded-xl border border-white/10 hover:bg-white/5 transition-all font-display font-700">Choose Premium</a>
               </div>
             </div>
           </div>
@@ -487,7 +487,7 @@ export default function App() {
               Stop building for today. Start engineering for tomorrow. Let's put your business on autopilot.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-20">
-              <a href="https://link.aldosia.com/widget/booking/SSHkKLoglu4Uoqm9vjll" className="px-12 py-5 bg-sky text-ink font-display font-700 text-lg rounded-full hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-sky/10 text-center">
+              <a href="https://link.aldosia.com/widget/booking/SSynS2Sc8s71Eyhovn4D" className="px-12 py-5 bg-sky text-ink font-display font-700 text-lg rounded-full hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-sky/10 text-center">
                 Get Started Now
               </a>
               <a href="mailto:yasser@aldosia.com" className="px-12 py-5 glass-card text-white font-display font-700 text-lg rounded-full hover:bg-white/10 transition-all active:scale-95 text-center">

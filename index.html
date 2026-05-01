@@ -1,50 +1,15 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aldosia - Redirecting...</title>
+    <meta http-equiv="refresh" content="0; url=/home">
     <script>
-      // Fix for LeadConnector widget trying to override read-only window.fetch
-      (function() {
-        try {
-          const originalFetch = window.fetch;
-          const descriptor = Object.getOwnPropertyDescriptor(window, 'fetch');
-          
-          if (!descriptor || descriptor.configurable) {
-            Object.defineProperty(window, 'fetch', {
-              get: function() { return originalFetch; },
-              set: function(v) { 
-                console.warn('Aldosia: Blocked attempt to override fetch.');
-                // Some scripts expect the assignment to "work" even if ignored
-              },
-              configurable: true,
-              enumerable: true
-            });
-          }
-        } catch (e) {
-          console.warn('Aldosia: Could not define fetch proxy.', e);
-        }
-      })();
+        window.location.href = "/home";
     </script>
-    
-    <title>Aldosia — Your Business, On Autopilot</title>
-    <meta name="description" content="Aldosia builds complete business growth systems — smart websites, CRM, AI automation, and sales funnels shipped together. Book a free strategy call.">
-    <meta property="og:title" content="Aldosia — Your Business, On Autopilot">
-    <meta property="og:description" content="Site, CRM, AI voice agent, unified inbox — shipped together.">
-    
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    
-    <!-- Google Fonts: Plus Jakarta Sans (Brand) + Inter & JetBrains Mono -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 </head>
 <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-    <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69eba1a0fa2b282168cdd872"></script>
+    <p>Redirecting to <a href="/home">home</a>...</p>
 </body>
 </html>
