@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Aldosia | Your Business, On Autopilot</title>
+    <meta name="description" content="Aldosia is a UK-based digital growth agency helping local and small businesses get more leads, follow up automatically, and grow — without hiring extra staff.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Colors */
+            --ink: #0A0A0A;
+            --ink2: #151515;
+            --ink3: #1E1E1E;
+            --line: #2A2A2A;
+            --white: #FFFFFF;
+            --mist: #A6A6A6;
+            --fog: #6E6E6E;
+            --sky: #A8CBF0;
+            --sky2: #7FB0E3;
+            --bone: #F5F5F5;
+
+            /* Radius */
+            --r-xs: 4px;
+            --r-s: 8px;
+            --r-m: 14px;
+            --r-l: 24px;
+
+            /* Spacing */
+            --s-4: 4px;
+            --s-8: 8px;
+            --s-12: 12px;
+            --s-20: 20px;
+            --s-32: 32px;
+            --s-56: 56px;
+
+            /* Motion */
+            --easing: cubic-bezier(0.2, 0.8, 0.2, 1);
+            --duration: 160ms;
+
+            /* Shadow */
+            --shadow: 0 12px 32px -16px rgba(10, 10, 10, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--ink);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            letter-spacing: -0.045em;
+            line-height: 1.1;
+            font-weight: 800;
+        }
+
+        .label-mono {
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            color: var(--mist);
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--s-20);
+        }
+
+        .sky-text {
+            color: var(--sky);
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--s-32);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--s-20);
+            }
+        }
+
+        /* Layout Helpers */
+        .section {
+            padding: var(--s-56) 0;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: var(--s-32) 0;
+            }
+        }
+
+        /* Navigation */
+        header {
+            background-color: var(--ink);
+            border-bottom: 1px solid var(--line);
+            height: 72px;
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Logo rendering */
+        .logo-wordmark {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: 30px;
+            letter-spacing: -0.045em;
+            color: var(--white);
+        }
+
+        .logo-a {
+            position: relative;
+            color: var(--white);
+        }
+
+        .logo-a::after {
+            content: 'A';
+            position: absolute;
+            left: -0.055em;
+            top: 0.055em;
+            color: var(--sky);
+            z-index: -1;
+        }
+
+        .logo-rest {
+            color: var(--white);
+        }
+
+        .logo-dot {
+            color: var(--sky2);
+        }
+
+        .logo-tagline {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+            color: var(--mist);
+            margin-left: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .logo-tagline { display: none; }
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            gap: var(--s-32);
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--mist);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color var(--duration) var(--easing);
+        }
+
+        .nav-links a:hover {
+            color: var(--sky);
+        }
+
+        .nav-links a.active {
+            color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 28px;
+            border-radius: 999px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all var(--duration) var(--easing);
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
+
+        .btn-white {
+            background-color: var(--white);
+            color: var(--ink);
+        }
+
+        .btn-white:hover {
+            background-color: var(--sky);
+            transform: translateY(-2px);
+        }
+
+        .btn-small {
+            padding: 8px 18px;
+            font-size: 14px;
+        }
+
+        /* Section 1: Hero */
+        .hero {
+            padding-top: var(--s-56);
+            padding-bottom: var(--s-56);
+        }
+
+        .hero-headline {
+            font-size: clamp(40px, 8vw, 76px);
+            margin-bottom: var(--s-20);
+            max-width: 900px;
+        }
+
+        .hero-subheadline {
+            font-size: clamp(18px, 4vw, 22px);
+            color: var(--mist);
+            max-width: 680px;
+            margin-bottom: var(--s-32);
+            font-weight: 300;
+        }
+
+        /* Section 2: Problem */
+        .problem-section {
+            background-color: var(--ink2);
+        }
+
+        .problem-headline {
+            font-size: clamp(24px, 5vw, 36px);
+            margin-bottom: var(--s-32);
+            max-width: 800px;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--s-20);
+        }
+
+        .card {
+            background-color: var(--ink3);
+            border: 1px solid var(--line);
+            border-radius: var(--r-m);
+            padding: var(--s-32);
+            transition: all var(--duration) var(--easing);
+        }
+
+        .card:hover {
+            border-color: var(--sky);
+            transform: translateY(-4px);
+        }
+
+        .card-title {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--white);
+        }
+
+        .card-body {
+            font-size: 15px;
+            color: var(--mist);
+        }
+
+        /* Section 3: Who We Are */
+        .who-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: var(--s-56);
+            align-items: center;
+        }
+
+        .who-paragraph {
+            font-size: 18px;
+            color: var(--mist);
+            line-height: 1.6;
+        }
+
+        .stats-block {
+            display: flex;
+            flex-direction: column;
+            gap: var(--s-20);
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-label {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--sky);
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+
+        .stat-value {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            color: var(--white);
+            font-size: 16px;
+        }
+
+        /* Section 4: How It Works */
+        .flow-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--s-20);
+            position: relative;
+        }
+
+        .flow-card {
+            background-color: var(--ink3);
+            border: 1px solid var(--line);
+            border-radius: var(--r-m);
+            padding: var(--s-32);
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-num {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--sky);
+            font-size: 12px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* Connecting Line Desktop */
+        @media (min-width: 1024px) {
+            .flow-connector {
+                position: absolute;
+                top: 40px; /* Aligned with Step labels */
+                left: 10%;
+                right: 10%;
+                height: 1px;
+                border-top: 1.5px dashed var(--sky);
+                opacity: 0.2;
+                z-index: 1;
+            }
+        }
+
+        /* Section 5: Values (Light) */
+        .values-section {
+            background-color: var(--bone);
+            color: var(--ink);
+        }
+
+        .values-section .label-mono {
+            color: var(--ink);
+        }
+
+        .values-section .problem-headline {
+            color: var(--ink);
+        }
+
+        .value-card {
+            background-color: var(--white);
+            border: 1px solid #EDEDED;
+            border-radius: var(--r-m);
+            padding: var(--s-32);
+        }
+
+        .value-card h3 {
+            color: var(--ink);
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .value-card p {
+            color: var(--fog);
+            font-size: 15px;
+        }
+
+        /* Section 6: Footer CTA */
+        .footer-cta {
+            text-align: center;
+            padding: var(--s-56) 0;
+        }
+
+        .footer-cta h2 {
+            font-size: clamp(32px, 7vw, 56px);
+            margin-bottom: var(--s-20);
+        }
+
+        .footer-sub {
+            font-size: 20px;
+            color: var(--mist);
+            margin-bottom: var(--s-32);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-links {
+            margin-top: var(--s-56);
+            padding-top: var(--s-32);
+            border-top: 1px solid var(--line);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--fog);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .problem-grid, .who-grid, .flow-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-headline {
+                font-size: 44px;
+            }
+            .logo-text {
+                font-size: 20px;
+            }
+            .card, .value-card, .flow-card {
+                padding: var(--s-20);
+            }
+        }
+
+        /* Icons (Minimal Inline SVG) */
+        .icon {
+            width: 24px;
+            height: 24px;
+            stroke: currentColor;
+            stroke-width: 1.75;
+            fill: none;
+            margin-bottom: 20px;
+            color: var(--mist);
+            transition: all var(--duration) var(--easing);
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .card:hover .icon {
+            color: var(--sky);
+            fill: rgba(168, 203, 240, 0.1); /* Subtle sky fill */
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="/" class="logo-wordmark">
+                <span class="logo-a">A</span><span class="logo-rest">ldosia</span><span class="logo-dot">.</span>
+            </a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about.html" class="active">About</a>
+                <a href="/#services">Services</a>
+            </div>
+            <a href="https://link.aldosia.com/widget/booking/SSHkKLoglu4Uoqm9vjll" class="btn btn-white btn-small">Book a Call</a>
+        </div>
+    </header>
+
+    <main>
+        
+        <!-- SECTION 1: HERO -->
+        <section class="section hero">
+            <div class="container">
+                <div class="label-mono">· ABOUT ALDOSIA</div>
+                <h1 class="hero-headline">
+                    We build the <span class="sky-text">system</span>. 
+                    <br>You run the business.
+                </h1>
+                <p class="hero-subheadline">
+                    Aldosia is a UK-based digital growth agency helping local and small businesses get more leads, follow up automatically, and grow — without hiring extra staff.
+                </p>
+                <a href="https://link.aldosia.com/widget/booking/SSHkKLoglu4Uoqm9vjll" class="btn btn-white">Book a Free Call &rarr;</a>
+            </div>
+        </section>
+
+        <!-- SECTION 2: THE PROBLEM -->
+        <section class="section problem-section">
+            <div class="container">
+                <div class="label-mono">· THE PROBLEM</div>
+                <h2 class="problem-headline">Most businesses lose leads every day. Not from lack of effort — from lack of system.</h2>
+                
+                <div class="problem-grid">
+                    <div class="card">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        <h3 class="card-title">Leads go cold</h3>
+                        <p class="card-body">Enquiries come in at 11pm. No one replies until morning. The lead books elsewhere.</p>
+                    </div>
+                    <div class="card">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <h3 class="card-title">Follow-up fails</h3>
+                        <p class="card-body">Busy owners forget to chase. One missed call = lost revenue.</p>
+                    </div>
+                    <div class="card">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7zm10 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+                        <h3 class="card-title">No visibility</h3>
+                        <p class="card-body">No dashboard. No pipeline. No idea which leads are warm or dead.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: WHO WE ARE -->
+        <section class="section">
+            <div class="container">
+                <div class="label-mono">· WHO WE ARE</div>
+                <h2 class="problem-headline">A growth system agency. Not just a website shop.</h2>
+                
+                <div class="who-grid">
+                    <p class="who-paragraph">
+                        Aldosia was built on one idea: local businesses deserve the same automation tools that enterprise companies use. We combine your website, CRM, AI follow-up, and reputation management into one connected system — built on one system, run for you.
+                    </p>
+                    <div class="stats-block">
+                        <div class="stat-item">
+                            <span class="stat-label">01 · UK-BASED AGENCY</span>
+                            <span class="stat-value">Serving SMBs across the UK</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">02 · ENTERPRISE TOOLS</span>
+                            <span class="stat-value">SMB pricing for powerful systems</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">03 · ONE SYSTEM</span>
+                            <span class="stat-value">Site + CRM + AI + Automations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: HOW IT WORKS -->
+        <section class="section">
+            <div class="container">
+                <div class="label-mono">· HOW IT WORKS</div>
+                <h2 class="problem-headline">Three steps. One system. Zero guesswork.</h2>
+                
+                <div class="flow-grid">
+                    <div class="flow-connector"></div>
+                    <div class="flow-card">
+                        <span class="step-num">STEP 01</span>
+                        <h3 class="card-title">We build your system</h3>
+                        <p class="card-body">Website + CRM + automations set up for your business.</p>
+                    </div>
+                    <div class="flow-card">
+                        <span class="step-num">STEP 02</span>
+                        <h3 class="card-title">Leads come in</h3>
+                        <p class="card-body">From your site, ads, or existing list — every one is captured.</p>
+                    </div>
+                    <div class="flow-card">
+                        <span class="step-num">STEP 03</span>
+                        <h3 class="card-title">System follows up</h3>
+                        <p class="card-body">Auto SMS, email, booking — while you focus on delivery.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: WHAT WE STAND FOR -->
+        <section class="section values-section">
+            <div class="container">
+                <div class="label-mono">· OUR VALUES</div>
+                <h2 class="problem-headline">We only win when you win.</h2>
+                
+                <div class="problem-grid">
+                    <div class="value-card">
+                        <h3>Clarity over complexity</h3>
+                        <p>We explain everything in plain English. No jargon.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Results, not promises</h3>
+                        <p>Every package is tied to outcomes you can measure.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Systems, not one-offs</h3>
+                        <p>We build things that work while you sleep.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: FOOTER BAND -->
+        <section class="section">
+            <div class="container footer-cta">
+                <h2>Ready to put your business on <span class="sky-text">autopilot?</span></h2>
+                <p class="footer-sub">Book a free 20-minute call. We'll show you exactly what your system would look like.</p>
+                <a href="https://link.aldosia.com/widget/booking/SSHkKLoglu4Uoqm9vjll" class="btn btn-white" style="font-size: 18px; padding: 16px 48px;">Book Your Free Call &rarr;</a>
+                
+                <div class="footer-links">
+                    hello@aldosia.com · aldosia.com
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Fix for "Cannot set property fetch of #<Window> which has only a getter"
+        // This occurs when some libraries try to polyfill fetch in an environment where it's read-only.
+        (function() {
+            try {
+                const descriptor = Object.getOwnPropertyDescriptor(Window.prototype, 'fetch');
+                if (descriptor && descriptor.get && !descriptor.set) {
+                    const originalFetch = window.fetch;
+                    Object.defineProperty(window, 'fetch', {
+                        get: () => originalFetch,
+                        set: (v) => { /* console.log('Attempted to set fetch, ignored.'); */ },
+                        configurable: true,
+                        enumerable: true
+                    });
+                }
+            } catch (e) {
+                // Silently fail if we can't redefine it
+            }
+        })();
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(targetId);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for Reveal animations
+        const revealCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        };
+
+        const revealObserver = new IntersectionObserver(revealCallback, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+    </script>
+
+</body>
+</html>
