@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AldosiaLogo = () => (
-  <a href="/home" style={{
-    textDecoration: 'none',
+  <div style={{
     display: 'flex',
     alignItems: 'center',
     fontFamily: "'Plus Jakarta Sans', sans-serif",
@@ -34,7 +34,7 @@ const AldosiaLogo = () => (
     </span>
     <span style={{ color: '#FFFFFF' }}>ldosia</span>
     <span style={{ color: '#7FB0E3' }}>.</span>
-  </a>
+  </div>
 );
 
 export default AldosiaLogo;
