@@ -53,47 +53,50 @@ const Home = () => {
       </section>
 
       {/* Free Trial Section */}
-      <section className="py-24 px-6 bg-ink border-y border-white/5">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-16 md:gap-24">
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-sky/20 rounded-2xl blur-xl group-hover:bg-sky/30 transition-all"></div>
-           <img 
-  alt="Aldosia Comprehensive Growth Dashboard showing active campaigns, leads captured, and ROI metrics" 
-  src="/dashboard.png"
-  loading="lazy"
-  onError={(e) => {
-    (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop";
-    (e.target as HTMLImageElement).onerror = null; // prevent infinite loop
-  }}
-  style={{ width: '100%', height: 'auto', borderRadius: '14px', display: 'block' }}
-  className="relative border border-white/10 shadow-2xl shadow-sky/10 group-hover:scale-[1.01] transition-transform duration-500"
-/>
-          </div>
-          <div className="space-y-8">
-            <span className="font-mono text-xs text-sky uppercase tracking-widest">Zero Risk. Zero Fluff.</span>
-            <h2 className="font-display font-800 text-4xl md:text-5xl tracking-tight">Get Results First. Pay After.</h2>
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <span className="material-symbols-outlined text-sky text-2xl">sync_alt</span>
-                <div>
-                  <h4 className="font-display font-700 text-lg">One-Click Integration</h4>
-                  <p className="font-sans font-300 text-white/60">Plug in your CRM, GMB, and socials in one click — no tech headaches.</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <span className="material-symbols-outlined text-sky text-2xl">bolt</span>
-                <div>
-                  <h4 className="font-display font-700 text-lg">Real-Time Optimization</h4>
-                  <p className="font-sans font-300 text-white/60">Our system spots dead leads and re-engages them automatically — while you sleep.</p>
-                </div>
-              </div>
-            </div>
-            <a href="https://link.aldosia.com/widget/booking/SSynS2Sc8s71Eyhovn4D" className="inline-block px-8 py-4 bg-sky text-ink font-display font-700 rounded-full hover:brightness-110 transition-all active:scale-95 text-center">
-              Book Your Strategy Call
-            </a>
+<section className="py-24 px-6 bg-ink border-y border-white/5">
+  <div className="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-16 md:gap-24">
+    <div className="relative group">
+      <div className="absolute -inset-1 bg-sky/20 rounded-2xl blur-xl group-hover:bg-sky/30 transition-all"></div>
+      <img
+        alt="Aldosia Comprehensive Growth Dashboard showing active campaigns, leads captured, and ROI metrics"
+        src="/dashboard.png"
+        loading="lazy"
+        onError={(e) => {
+          (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop";
+          (e.target as HTMLImageElement).onerror = null;
+        }}
+        style={{ width: '100%', height: 'auto', borderRadius: '14px', display: 'block' }}
+        className="relative border border-white/10 shadow-2xl shadow-sky/10 group-hover:scale-[1.01] transition-transform duration-500"
+      />
+    </div>
+    <div className="space-y-8">
+      <span className="font-mono text-xs text-sky uppercase tracking-widest">Zero Risk. Zero Fluff.</span>
+      <h2 className="font-display font-800 text-4xl md:text-5xl tracking-tight">Get Results First. Pay After.</h2>
+      <div className="space-y-6">
+        <div className="flex items-start gap-4">
+          <span className="material-symbols-outlined text-sky text-2xl">sync_alt</span>
+          <div>
+            <h4 className="font-display font-700 text-lg">One-Click Integration</h4>
+            <p className="font-sans font-300 text-white/60">Plug in your CRM, GMB, and socials in one click — no tech headaches.</p>
           </div>
         </div>
-      </section>
+        <div className="flex items-start gap-4">
+          <span className="material-symbols-outlined text-sky text-2xl">bolt</span>
+          <div>
+            <h4 className="font-display font-700 text-lg">Real-Time Optimization</h4>
+            <p className="font-sans font-300 text-white/60">Our system spots dead leads and re-engages them automatically — while you sleep.</p>
+          </div>
+        </div>
+      </div>
+      
+        href="https://link.aldosia.com/widget/booking/SSynS2Sc8s71Eyhovn4D"
+        className="inline-block px-8 py-4 bg-sky text-ink font-display font-700 rounded-full hover:brightness-110 transition-all active:scale-95 text-center"
+      >
+        Book Your Strategy Call
+      </a>
+    </div>
+  </div>
+</section>
 
       {/* Services Grid */}
       <section className="py-32 px-6" id="services">
