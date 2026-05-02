@@ -57,16 +57,17 @@ const Home = () => {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-16 md:gap-24">
           <div className="relative group">
             <div className="absolute -inset-1 bg-sky/20 rounded-2xl blur-xl group-hover:bg-sky/30 transition-all"></div>
-            <img 
-              alt="Aldosia Comprehensive Growth Dashboard showing active campaigns, leads captured, and ROI metrics" 
-              src="/dashboard.png"
-              loading="lazy"
-              onError={(e) => {
-                (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1551288049-bbbda536ad89?q=80&w=2070&auto=format&fit=crop";
-              }}
-              style={{ width: '100%', height: 'auto', borderRadius: '14px', display: 'block' }}
-              className="relative border border-white/10 shadow-2xl shadow-sky/10 group-hover:scale-[1.01] transition-transform duration-500"
-            />
+           <img 
+  alt="Aldosia Comprehensive Growth Dashboard showing active campaigns, leads captured, and ROI metrics" 
+  src="/dashboard.png"
+  loading="lazy"
+  onError={(e) => {
+    (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop";
+    (e.target as HTMLImageElement).onerror = null; // prevent infinite loop
+  }}
+  style={{ width: '100%', height: 'auto', borderRadius: '14px', display: 'block' }}
+  className="relative border border-white/10 shadow-2xl shadow-sky/10 group-hover:scale-[1.01] transition-transform duration-500"
+/>
           </div>
           <div className="space-y-8">
             <span className="font-mono text-xs text-sky uppercase tracking-widest">Zero Risk. Zero Fluff.</span>
