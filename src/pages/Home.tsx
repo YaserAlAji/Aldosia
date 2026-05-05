@@ -88,12 +88,12 @@ const Home = () => {
           </div>
         </div>
       </div>
-      
-        href="https://link.aldosia.com/widget/booking/SSynS2Sc8s71Eyhovn4D"
-        className="inline-block px-8 py-4 bg-sky text-ink font-display font-700 rounded-full hover:brightness-110 transition-all active:scale-95 text-center"
-      >
-        Book Your Strategy Call
-      </a>
+      <a
+      href="https://link.aldosia.com/widget/booking/SSynS2Sc8s71Eyhovn4D"
+            className="inline-block px-8 py-4 bg-sky text-ink font-display font-700 rounded-full hover:brightness-110 transition-all active:scale-95 text-center"
+          >
+            Book Your Strategy Call
+          </a>
     </div>
   </div>
 </section>
