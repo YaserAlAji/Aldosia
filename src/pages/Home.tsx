@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   useEffect(() => {
+    console.log("Testing image:", "/second-hero-image.png");
     // Reveal animation intersection observer
     const revealCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach(entry => {
@@ -53,50 +54,45 @@ const Home = () => {
       </section>
 
       {/* Free Trial Section */}
-<section className="py-24 px-6 bg-ink border-y border-white/5">
-  <div className="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-16 md:gap-24">
-    <div className="relative group">
-      <div className="absolute -inset-1 bg-sky/20 rounded-2xl blur-xl group-hover:bg-sky/30 transition-all"></div>
-      <img
-        alt="Aldosia Comprehensive Growth Dashboard showing active campaigns, leads captured, and ROI metrics"
-        src="/dashboard.png"
-        loading="lazy"
-        onError={(e) => {
-          (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop";
-          (e.target as HTMLImageElement).onerror = null;
-        }}
-        style={{ width: '100%', height: 'auto', borderRadius: '14px', display: 'block' }}
-        className="relative border border-white/10 shadow-2xl shadow-sky/10 group-hover:scale-[1.01] transition-transform duration-500"
-      />
-    </div>
-    <div className="space-y-8">
-      <span className="font-mono text-xs text-sky uppercase tracking-widest">Zero Risk. Zero Fluff.</span>
-      <h2 className="font-display font-800 text-4xl md:text-5xl tracking-tight">Get Results First. Pay After.</h2>
-      <div className="space-y-6">
-        <div className="flex items-start gap-4">
-          <span className="material-symbols-outlined text-sky text-2xl">sync_alt</span>
-          <div>
-            <h4 className="font-display font-700 text-lg">One-Click Integration</h4>
-            <p className="font-sans font-300 text-white/60">Plug in your CRM, GMB, and socials in one click — no tech headaches.</p>
+      <section className="py-24 px-6 bg-ink border-y border-white/5">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-16 md:gap-24">
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-sky/20 rounded-2xl blur-xl group-hover:bg-sky/30 transition-all"></div>
+            <img 
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+              alt="Aldosia dashboard preview"
+              loading="lazy"
+              className="w-full max-w-[620px] h-auto object-contain relative border border-white/10 shadow-2xl shadow-sky/10 group-hover:scale-[1.01] transition-transform duration-500 rounded-xl block"
+            />
+          </div>
+          <div className="space-y-8">
+            <span className="font-mono text-xs text-sky uppercase tracking-widest">Zero Risk. Zero Fluff.</span>
+            <h2 className="font-display font-800 text-4xl md:text-5xl tracking-tight">Get Results First. Pay After.</h2>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <span className="material-symbols-outlined text-sky text-2xl">sync_alt</span>
+                <div>
+                  <h4 className="font-display font-700 text-lg">One-Click Integration</h4>
+                  <p className="font-sans font-300 text-white/60">Plug in your CRM, GMB, and socials in one click — no tech headaches.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <span className="material-symbols-outlined text-sky text-2xl">bolt</span>
+                <div>
+                  <h4 className="font-display font-700 text-lg">Real-Time Optimization</h4>
+                  <p className="font-sans font-300 text-white/60">Our system spots dead leads and re-engages them automatically — while you sleep.</p>
+                </div>
+              </div>
+            </div>
+            <a 
+              href="https://link.aldosia.com/widget/booking/SSynS2Sc8s71Eyhovn4D" 
+              className="inline-block px-8 py-4 bg-sky text-ink font-display font-700 rounded-full hover:brightness-110 transition-all active:scale-95 text-center"
+            >
+              Book Your Strategy Call
+            </a>
           </div>
         </div>
-        <div className="flex items-start gap-4">
-          <span className="material-symbols-outlined text-sky text-2xl">bolt</span>
-          <div>
-            <h4 className="font-display font-700 text-lg">Real-Time Optimization</h4>
-            <p className="font-sans font-300 text-white/60">Our system spots dead leads and re-engages them automatically — while you sleep.</p>
-          </div>
-        </div>
-      </div>
-      <a
-      href="https://link.aldosia.com/widget/booking/SSynS2Sc8s71Eyhovn4D"
-            className="inline-block px-8 py-4 bg-sky text-ink font-display font-700 rounded-full hover:brightness-110 transition-all active:scale-95 text-center"
-          >
-            Book Your Strategy Call
-          </a>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Services Grid */}
       <section className="py-32 px-6" id="services">
@@ -234,7 +230,7 @@ const Home = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
                   <div className="hidden md:block absolute top-[40px] left-[15%] right-[15%] h-[1px] bg-gradient-to-r from-transparent via-sky/20 to-transparent z-0"></div>
 
-                  <div className="reveal relative z-10 flex flex-col items-center text-center group p-8 rounded-3xl transition-all duration-500 hover:bg-sky/5 hover:-translate-y-2 border border-transparent hover:border-sky/20">
+                  <div className="reveal relative z-10 flex flex-col items-center text-center group p-10 rounded-3xl glass-card transition-all duration-500 hover:bg-sky/5 hover:-translate-y-2 border-white/5 hover:border-sky/40 hover:shadow-2xl hover:shadow-sky/10">
                       <div className="w-20 h-20 glass-card rounded-2xl flex items-center justify-center mb-8 border-sky/20 group-hover:bg-sky/10 transition-all duration-500 group-hover:scale-110">
                           <span className="font-display font-800 text-2xl text-sky lowercase">01</span>
                       </div>
@@ -242,7 +238,7 @@ const Home = () => {
                       <p className="font-sans font-300 text-white/60 leading-relaxed max-w-[280px]">We audit your current setup, identify gaps, and map out your full growth system in a free 20-min call.</p>
                   </div>
 
-                  <div className="reveal relative z-10 flex flex-col items-center text-center group p-8 rounded-3xl transition-all duration-500 hover:bg-sky/5 hover:-translate-y-2 border border-transparent hover:border-sky/20">
+                  <div className="reveal relative z-10 flex flex-col items-center text-center group p-10 rounded-3xl glass-card transition-all duration-500 hover:bg-sky/5 hover:-translate-y-2 border-white/5 hover:border-sky/40 hover:shadow-2xl hover:shadow-sky/10">
                       <div className="w-20 h-20 glass-card rounded-2xl flex items-center justify-center mb-8 border-sky/20 group-hover:bg-sky/10 transition-all duration-500 group-hover:scale-110">
                           <span className="font-display font-800 text-2xl text-sky lowercase">02</span>
                       </div>
@@ -250,7 +246,7 @@ const Home = () => {
                       <p className="font-sans font-300 text-white/60 leading-relaxed max-w-[280px]">Your website, CRM, automations, and inbox are built and configured. You don't touch anything.</p>
                   </div>
 
-                  <div className="reveal relative z-10 flex flex-col items-center text-center group p-8 rounded-3xl transition-all duration-500 hover:bg-sky/5 hover:-translate-y-2 border border-transparent hover:border-sky/20">
+                  <div className="reveal relative z-10 flex flex-col items-center text-center group p-10 rounded-3xl glass-card transition-all duration-500 hover:bg-sky/5 hover:-translate-y-2 border-white/5 hover:border-sky/40 hover:shadow-2xl hover:shadow-sky/10">
                       <div className="w-20 h-20 bg-sky rounded-2xl flex items-center justify-center mb-8 shadow-[0_0_30px_rgba(168,203,240,0.3)] group-hover:scale-110 transition-all duration-500">
                           <span className="font-display font-800 text-2xl text-ink lowercase">03</span>
                       </div>

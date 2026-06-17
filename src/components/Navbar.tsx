@@ -40,6 +40,7 @@ const Navbar = () => {
         <div className="hidden md:flex gap-8 items-center font-display font-700 text-sm tracking-tight">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/about">About</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
           <HashLink to="#services">Services</HashLink>
           <HashLink to="#process">Process</HashLink>
           <HashLink to="#niches">Niches</HashLink>
