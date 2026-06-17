@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import dashboardPreview from '../assets/images/second_hero_image_1781727642818.jpg';
 
 const Home = () => {
   useEffect(() => {
@@ -59,8 +60,9 @@ const Home = () => {
           <div className="relative group">
             <div className="absolute -inset-1 bg-sky/20 rounded-2xl blur-xl group-hover:bg-sky/30 transition-all"></div>
             <img 
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+              src={dashboardPreview}
               alt="Aldosia dashboard preview"
+              referrerPolicy="no-referrer"
               loading="lazy"
               className="w-full max-w-[620px] h-auto object-contain relative border border-white/10 shadow-2xl shadow-sky/10 group-hover:scale-[1.01] transition-transform duration-500 rounded-xl block"
             />

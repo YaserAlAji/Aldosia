@@ -30,24 +30,22 @@ const Footer = () => {
               <h5 className="text-white">Company</h5>
               <Link className="text-white/40 hover:text-sky transition-colors" to="/about">About</Link>
               <Link className="text-white/40 hover:text-sky transition-colors" to="/contact">Contact</Link>
-              <a className="text-white/40 hover:text-sky transition-colors" href="#">Careers</a>
-              <a className="text-white/40 hover:text-sky transition-colors" href="#">Success</a>
+              <Link className="text-white/40 hover:text-sky transition-colors" to="/#success">Success</Link>
             </div>
             <div className="flex flex-col gap-4">
               <h5 className="text-white">Legal</h5>
-              <a className="text-white/40 hover:text-sky transition-colors" href="#">Privacy</a>
-              <a className="text-white/40 hover:text-sky transition-colors" href="#">Terms</a>
-              <a className="text-white/40 hover:text-sky transition-colors" href="#">Security</a>
+              <Link className="text-white/40 hover:text-sky transition-colors" to="/privacy-policy">Privacy</Link>
+              <Link className="text-white/40 hover:text-sky transition-colors" to="/terms-of-service">Terms</Link>
             </div>
           </div>
         </div>
         <div className="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-white/5 gap-6">
           <p className="font-mono text-[10px] text-white/20">© 2025 ALDOSIA LTD. ALL RIGHTS RESERVED.</p>
           <div className="flex gap-6">
-            <a className="text-white/20 hover:text-sky transition-colors" href="#">
+            <Link className="text-white/20 hover:text-sky transition-colors" to="/">
               <span className="material-symbols-outlined text-lg">public</span>
-            </a>
-            <a className="text-white/20 hover:text-sky transition-colors" href="#">
+            </Link>
+            <a className="text-white/20 hover:text-sky transition-colors" href="mailto:yasser@aldosia.com">
               <span className="material-symbols-outlined text-lg">alternate_email</span>
             </a>
           </div>
