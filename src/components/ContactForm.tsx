@@ -105,19 +105,56 @@ export default function ContactForm() {
     };
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      });
+      let isSuccess = false;
+      let msg = "";
 
-      const data = await response.json();
+      // 1. Try sending to server-side API first
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        });
 
-      if (response.ok && data.success) {
+        const contentType = response.headers.get('content-type') || '';
+        if (response.ok && contentType.includes('application/json')) {
+          const data = await response.json();
+          if (data.success) {
+            isSuccess = true;
+            msg = data.message || "Thank you. Your message has been received and we’ll contact you shortly.";
+          } else {
+            msg = data.message || "Something went wrong. Please try again.";
+          }
+        } else {
+          throw new Error("Local API endpoint not available or returned non-JSON. Falling back to direct submission.");
+        }
+      } catch (localErr) {
+        console.warn("Local API failed, attempting direct GoHighLevel webhook submission:", localErr);
+        
+        // 2. Direct client-side webhook fallback
+        const ghlWebhookUrl = "https://services.leadconnectorhq.com/hooks/nDM0WWTnUfiKBHf3zTKU/webhook-trigger/3fbd06a4-56b0-4a2d-89b6-49ea7a61c5a9";
+        const directResponse = await fetch(ghlWebhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (directResponse.ok) {
+          isSuccess = true;
+          msg = "Thank you. Your message has been received and we’ll contact you shortly.";
+        } else {
+          const errText = await directResponse.text();
+          throw new Error(`Direct submission failed with status ${directResponse.status}: ${errText}`);
+        }
+      }
+
+      if (isSuccess) {
         setSubmitStatus('success');
-        setStatusMessage("Thank you. Your message has been received and we’ll contact you shortly.");
+        setStatusMessage(msg || "Thank you. Your message has been received and we’ll contact you shortly.");
         // Reset form
         setFormData({
           fullName: '',
@@ -130,12 +167,12 @@ export default function ContactForm() {
         });
       } else {
         setSubmitStatus('error');
-        setStatusMessage(data.message || "Something went wrong while submitting. Please try again.");
+        setStatusMessage(msg || "Something went wrong while submitting. Please try again.");
       }
-    } catch (err) {
+    } catch (err: any) {
       console.error("Submission error:", err);
       setSubmitStatus('error');
-      setStatusMessage("Unable to send your inquiry due to a network connection issue. Please try again later.");
+      setStatusMessage(`Unable to submit your inquiry: ${err.message || err}. Please try again.`);
     } finally {
       setIsSubmitting(false);
     }
